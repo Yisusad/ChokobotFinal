@@ -19,7 +19,7 @@ INDEX_NAME = st.secrets['PINECONE_INDEX_NAME']
 
 #Crea la cadena de conversación
 def get_conversation_chain(vstore):
-    llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=1)
+    llm = ChatOpenAI(model='gpt-4', temperature=1)
 
     memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
     conversation_chain = ConversationalRetrievalChain.from_llm(
@@ -90,7 +90,7 @@ def main():
                 document = loader.load()
     
                 # Convertr en chunks
-                text_splitter = RecursiveCharacterTextSplitter( chunk_size=800, chunk_overlap=100, length_function=len)
+                text_splitter = RecursiveCharacterTextSplitter( chunk_size=400, chunk_overlap=100, length_function=len)
                 document_chunks = text_splitter.split_documents(document)    
                 # Crear el vector store
                 vstore = Chroma.from_documents(document_chunks, OpenAIEmbeddings())
