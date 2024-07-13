@@ -3,7 +3,6 @@ import os
 from utils import *
 from langchain.vectorstores import Pinecone
 from langchain.chains.question_answering import load_qa_chain
-from dotenv import load_dotenv
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
@@ -39,7 +38,6 @@ def handle_userinput(user_question):
 
 #Función principal
 def main():
-    load_dotenv()
     st.set_page_config(page_title="Chokobot",
                        page_icon=":robot_face:")
     st.write(css, unsafe_allow_html=True)
