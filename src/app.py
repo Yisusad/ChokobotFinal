@@ -5,7 +5,6 @@ from langchain.vectorstores import Pinecone
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceEmbeddings 
 from langchain.chat_models import ChatOpenAI
 from langchain.chains.question_answering import load_qa_chain
-from dotenv import load_dotenv
 
 
 FILE_LIST = "archivos.txt"
