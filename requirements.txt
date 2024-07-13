@@ -2,7 +2,6 @@ openai
 langchain
 streamlit
 pypdf
-python-dotenv
 pinecone-client==2.2.4
 sentence_transformers
 altair==4
